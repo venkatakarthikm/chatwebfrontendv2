@@ -1,0 +1,339 @@
+/* Common Styles */
+.menu-container {
+  display: flex;
+  height: 100vh;
+}
+
+.select-to-chat {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.menu-left {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.menu-right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+
+.menu-header-r {
+  display: flex;
+  height: 45px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-avatar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+}
+
+.menu-title h1 {
+  margin: 0 10px;
+}
+
+.back-button {
+  display: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.contact-list,
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.contact-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item:hover {
+  background-color: #f0f0f0;
+}
+
+.hovered-contact-info {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chat-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-header h2 {
+  margin: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contact-status {
+  font-size: 14px;
+}
+
+.contact-status.online {
+  color: #4caf50;
+}
+
+.contact-status.offline {
+  color: #f44336;
+}
+
+.search-bar {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 40px);
+}
+
+.menu-footer {
+  margin-top: auto;
+  padding: 5px;
+  border-top: 1px solid #ccc;
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+}
+
+.account-icon-container {
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.account-icon-container:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.account-icon {
+  font-size: 20px;
+}
+
+/* Light Theme */
+.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.back-button.light-theme {
+  color: #1b1a1a;
+}
+
+.light-theme .menu-left {
+  background-color: #f9f9f9;
+}
+
+.light-theme .menu-right {
+  background-color: #fff;
+}
+
+.light-theme .menu-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.light-theme .contact-item:hover {
+  background-color: #f0f0f0;
+}
+
+.light-theme .selected-contact-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.light-theme .contact-photo {
+  border: 3px solid lightgreen;
+  margin-right: 10px;
+}
+
+.light-theme .contact-details {
+  color: #000;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.back-button.dark-theme {
+  color: white;
+}
+
+.dark-theme .menu-left {
+  background-color: #040404;
+}
+
+.dark-theme .menu-right {
+  background-color: #2a2828;
+}
+
+.dark-theme .menu-header {
+  background-color: #1b1a1a;
+  border-bottom: 1px solid #201f1f;
+}
+
+.dark-theme .contact-item:hover {
+  background-color: #5b5757;
+}
+
+.dark-theme .selected-contact-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #2a2828;
+  border-bottom: 1px solid #555;
+}
+
+.dark-theme .contact-photo {
+  border: 3px solid #f44336;
+  margin-right: 10px;
+}
+
+.dark-theme .contact-details {
+  color: #fff;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 575.98px) {
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .back-button {
+    display: block;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .back-button {
+    display: block;
+  }
+}
+
+/* Additional Styles for Selected Contact Info */
+.contact-details-top {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.contact-photo.online {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 3px solid lightgreen;
+}
+
+.contact-photo.offline {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 3px solid lightcoral;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contact-status {
+  font-size: 14px;
+}
+
+.contact-status.online {
+  color: #4caf50;
+}
+
+.contact-status.offline {
+  color: #f44336;
+}

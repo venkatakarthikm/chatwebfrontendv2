@@ -1,0 +1,261 @@
+/* Common Styles */
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Header Section */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.contact-photo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Trirong', serif; /* Profile name in Trirong font */
+}
+
+.contact-status {
+  font-size: 14px;
+  font-family: 'Times New Roman', serif; /* Last seen in Times New Roman */
+}
+
+.contact-status.online {
+  color: rgb(12, 221, 12); /* Light green if online */
+}
+
+.contact-status.offline {
+  color: red; /* Light red if offline */
+}
+
+/* Message Container */
+.message-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Added for scroll-down icon positioning */
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  max-width: 70%;
+  position: relative;
+}
+
+.message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #fff;
+  align-self: flex-start;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #888888;
+}
+
+.message.sent .message-time {
+  align-self: flex-end;
+}
+
+.message.received .message-time {
+  align-self: flex-start;
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  padding: 4px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input textarea {
+  flex: 1;
+  min-height: 30px; /* Reduced min-height */
+  max-height: 60px; /* Reduced max-height */
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 12px; /* Reduced font-size */
+  resize: none; /* Prevent manual resizing */
+  overflow: hidden; /* Hide scrollbars */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  color: #333; /* Default text color */
+  background-color: #fff; /* Default background color */
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 5px 10px; /* Reduced padding */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 24px; /* Icon font size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input button:hover {
+  background-color: rgba(0, 86, 179, 0.1); /* Light background on hover */
+}
+
+.send-icon {
+  color: #1976d2;
+  transition: color 0.3s ease;
+}
+
+.chat-input button:hover .send-icon {
+  color: #1565c0; /* Darker blue on hover */
+}
+
+/* No Contact Selected */
+.select-to-chat {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* Light Theme */
+.light-theme .chat-area {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.light-theme .message.sent {
+  background-color: #dcf8c6;
+}
+
+.light-theme .message.received {
+  background-color: #dcf8c6;
+}
+
+/* Dark Theme */
+.dark-theme .chat-area {
+  background-color: #181818;
+  color: #ddd;
+}
+
+.dark-theme .chat-input textarea {
+  color: #ddd; /* Text color in dark mode */
+  background-color: #333; /* Background color in dark mode */
+}
+
+.dark-theme .message.sent {
+  background-color: rgb(41, 47, 44);
+}
+
+.dark-theme .message.received {
+  background-color: #444;
+}
+
+/* Scroll Down Icon */
+.scroll-down-icon {
+  position: absolute;
+  bottom: 95px; /* Adjust this value to position it just above the text area */
+  left: 65%;
+  transform: translateX(-50%);
+  background-color: #007bff; /* Customize color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 24px; /* Icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-down-icon:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Context Menu Styles */
+.context-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+
+.context-menu.show {
+  display: block;
+}
+
+.context-menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.context-menu-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Dark Theme Context Menu */
+.dark-theme .context-menu {
+  background-color: #333;
+  border: 1px solid #444;
+}
+
+.dark-theme .context-menu-item {
+  color: #ddd;
+}
+
+.dark-theme .context-menu-item:hover {
+  background-color: #555;
+}
